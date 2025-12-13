@@ -1,13 +1,17 @@
+// src/components/Header.tsx
+
 "use client";
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Image from "next/image";
 
 interface HeaderProps {
   userName: string;
+  userRole: string; // Novo prop para o cargo
 }
 
-export default function Header({ userName }: HeaderProps) {
+export default function Header({ userName, userRole }: HeaderProps) {
   const router = useRouter();
   const [isLoggingOut, setIsLoggingOut] = useState(false);
 
@@ -34,15 +38,20 @@ export default function Header({ userName }: HeaderProps) {
       <div className="container mx-auto px-6 py-5 flex items-center justify-between relative z-10">
         {/* Logo */}
         <div className="flex items-center gap-4 animate-slide-in">
-          <div className="w-12 h-12 bg-gradient-to-br from-franca-green to-franca-green-dark rounded-xl flex items-center justify-center shadow-lg transform hover:scale-110 hover:rotate-6 transition-all duration-300">
-            <span className="text-2xl font-bold text-franca-blue">F</span>
+          <div className="w-12 h-12 bg-gradient-to-br from-franca-green to-franca-green-dark rounded-xl flex items-center justify-center shadow-lg transform hover:scale-110 hover:rotate-6 transition-all duration-300 relative overflow-hidden">
+            <Image
+              src="/logo.png"
+              alt="Franca Logo"
+              fill={true}
+              style={{ objectFit: "contain" }}
+            />
           </div>
           <div>
             <h1 className="text-2xl font-bold tracking-tight">
               FRANCA<span className="text-franca-green">.</span>
             </h1>
             <p className="text-xs text-gray-300 tracking-wider uppercase">
-              Daily Reports System
+              Daily Reports
             </p>
           </div>
         </div>
@@ -51,7 +60,10 @@ export default function Header({ userName }: HeaderProps) {
         <div className="flex items-center gap-4 animate-slide-in" style={{ animationDelay: '0.1s' }}>
           <div className="text-right hidden md:block">
             <p className="font-semibold text-lg">{userName}</p>
-            <p className="text-xs text-gray-300 uppercase tracking-wide">Membro da Equipe</p>
+            {/* Exibindo o cargo personalizado aqui */}
+            <p className="text-xs text-gray-300 uppercase tracking-wide">
+              {userRole}
+            </p>
           </div>
 
           <div className="relative group">

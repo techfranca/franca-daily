@@ -1,7 +1,10 @@
+// src/app/login/page.tsx
+
 "use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image"; // Importar o componente Image
 
 const USERS = ["Gabriel", "Bruna", "Guilherme", "Leonardo", "Davidson"];
 
@@ -57,8 +60,15 @@ export default function LoginPage() {
         <div className="flex justify-center mb-10">
           <div className="text-center">
             <div className="mb-4 relative">
-              <div className="w-20 h-20 mx-auto bg-gradient-to-br from-franca-green to-franca-green-dark rounded-2xl flex items-center justify-center shadow-franca transform hover:scale-105 transition-transform duration-300">
-                <span className="text-4xl font-bold text-franca-blue">F</span>
+              {/* SUBSTITUIÇÃO AQUI: De DIV para Image */}
+              <div className="w-20 h-20 mx-auto bg-gradient-to-br from-franca-green to-franca-green-dark rounded-2xl flex items-center justify-center shadow-franca transform hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+                <Image
+                  src="/logo.png"
+                  alt="Franca Logo"
+                  width={80} // w-20 = 80px
+                  height={80} // h-20 = 80px
+                  className="object-contain" // Garante que o logo caiba dentro do contêiner
+                />
               </div>
             </div>
             <h1 className="text-4xl font-bold text-franca-blue mb-1">
