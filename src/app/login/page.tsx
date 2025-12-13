@@ -45,12 +45,13 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-franca-green via-white to-franca-green-dark flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-franca-green via-white to-franca-green-dark p-4">
       {/* Elementos decorativos */}
-      <div className="geometric-circle w-96 h-96 top-0 -left-48 animate-float"></div>
-      <div className="geometric-circle w-80 h-80 bottom-0 -right-40 animate-float" style={{ animationDelay: '2s' }}></div>
-      <div className="geometric-circle w-64 h-64 top-1/2 left-1/4 animate-float" style={{ animationDelay: '4s' }}></div>
+      <div className="geometric-circle w-96 h-96 top-0 -left-48 animate-float absolute"></div>
+      <div className="geometric-circle w-80 h-80 bottom-0 -right-40 animate-float absolute" style={{ animationDelay: '2s' }}></div>
+      <div className="geometric-circle w-64 h-64 top-1/2 left-1/4 animate-float absolute" style={{ animationDelay: '4s' }}></div>
 
+      {/* Card centralizado */}
       <div className="glass-effect rounded-3xl shadow-franca-lg p-10 md:p-14 max-w-md w-full relative z-10 animate-fade-in">
         {/* Logo minimalista */}
         <div className="flex justify-center mb-10">
@@ -128,7 +129,7 @@ export default function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
               placeholder="••••••••"
-              className="w-full px-5 py-4 bg-white border-2 border-gray-100 rounded-xl focus:border-franca-green focus:ring-4 focus:ring-franca-green focus:ring-opacity-10 outline-none transition-all hover:border-franca-green"
+              className="w-full px-5 py-4 bg-white border-2 border-gray-100 rounded-xl focus:border-franca-green focus:ring-4 focus:ring-franca-green focus:ring-opacity-10 outline-none transition-all hover:border-franca-green text-franca-blue"
             />
           </div>
 
