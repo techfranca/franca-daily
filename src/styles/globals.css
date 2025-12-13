@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  /* --- Paleta FRANCA --- */
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  
+  /* Verde Franca (Destaque Principal) */
+  --color-franca-green: #7DE08D;
+  
+  /* Azul Franca (Secundário) */
+  --color-franca-blue: #081534;
+  
+  /* Primary agora usa o Verde Franca */
+  --color-primary: #7DE08D;
+  --color-primary-foreground: #000000;
+  
+  /* Verde de Status */
+  --color-success: #22c55e;
+  
+  /* Estrutura - Tons escuros para contraste */
+  --color-card: #0a0a0a;
+  --color-border: #1f1f1f;
+  --color-input: #1f1f1f;
+  
+  /* Foco usa o Verde Franca */
+  --color-ring: #7DE08D;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Selection color */
+::selection {
+  background-color: #7DE08D;
+  color: #000000;
+}
+
+::-moz-selection {
+  background-color: #7DE08D;
+  color: #000000;
+}
+
+/* Animações suaves */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
