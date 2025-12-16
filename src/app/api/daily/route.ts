@@ -5,9 +5,9 @@ import { format } from "date-fns";
 
 export async function POST(request: NextRequest) {
   try {
-    const userName = await getAuthUser();
+    const user = await getAuthUser();
 
-    if (!userName) {
+    if (!user) {
       return NextResponse.json({ error: "Não autorizado" }, { status: 401 });
     }
 
@@ -22,8 +22,9 @@ export async function POST(request: NextRequest) {
     }
 
     const now = new Date();
+
     const report = {
-      user: userName,
+      user: user.name, // ✅ agora é string
       date: format(now, "dd/MM/yyyy"),
       time: format(now, "HH:mm"),
       question1,
